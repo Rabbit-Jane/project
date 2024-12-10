@@ -3,6 +3,7 @@
     font-family: "Roboto", sans-serif;
     font-style: normal;
     line-height: normal;
+    text-decoration: none;
 }
 
 body {
@@ -163,6 +164,7 @@ main {
     width: 384px;
     /* height: 377px; */
     overflow: hidden;
+    
 }
 
 .productds-card__image {
@@ -284,15 +286,18 @@ main {
 }
 
 .cart-modal__overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.4);
-    display: flex;
     align-items: center;
     justify-content: center;
+}
+.cart-modal__overlay.open {
+    display: flex;
 }
 
 .cart-modal {
@@ -328,6 +333,7 @@ main {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    margin-top: 50px;
 }
 
 .cart-modal__footer--price {
@@ -355,6 +361,11 @@ main {
     flex-wrap: wrap;
     gap: 10px;
 }
+.cart-item:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D9D9D9;
+}
 
 .cart-item__title {
     font-weight: 400;
@@ -369,12 +380,13 @@ main {
     font-size: 20px;
     line-height: 160%;
     color: #000;
+    margin-right: 45px;
 }
 
 .cart-item__controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
 }
 
 .cart-item__controls button {
